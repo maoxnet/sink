@@ -1,34 +1,40 @@
 <template>
-  <div class="custom-home">
-    <a href="/dashboard" class="logo-link">
-      <img src="/customlogo.png" alt="Logo" class="center-logo" />
+  <div class="flex-center">
+    <a href="/dashboard">
+      <img src="/customlogo.png" alt="Logo" class="logo" />
     </a>
   </div>
 </template>
 
-<script setup></script>
-
 <style scoped>
-.custom-home {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #ffffff;
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-.center-logo {
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.flex-center {
+  width: 100vw;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.logo {
   width: 200px;
-  height: auto;
+  max-width: 40vw;
   cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.center-logo:hover {
-  opacity: 0.9;
-  transform: scale(1.04);
 }
 </style>
