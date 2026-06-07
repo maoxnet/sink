@@ -55,6 +55,7 @@
     "analysis": "Analyse",
     "realtime": "Echtzeit",
     "check": "Check",
+    "batch_convert": "Massenkonvertierung",
     "migrate": "Import/Export"
   },
   "sidebar": {
@@ -415,5 +416,27 @@
         "parse_error": "Datei konnte nicht analysiert werden"
       }
     }
+  },
+  "batch_convert": {
+    "title": "Massenkonvertierung",
+    "description": "Fügen Sie Text mit mehreren URLs ein und konvertieren Sie diese automatisch in Kurzlinks",
+    "input_label": "Inhalt",
+    "input_placeholder": "Fügen Sie hier Text mit URLs ein, z.B.:\nProduktname\nLink https://example.com/abc\nKaufen https://example.com/def\n15,9€ kostenloser Versand",
+    "expiration_label": "Einheitliches Ablaufdatum",
+    "expiration_description": "Legen Sie ein einheitliches Ablaufdatum für alle generierten Kurzlinks fest. Leer lassen für kein Ablaufdatum.",
+    "pick_date": "Datum wählen",
+    "button": "Konvertieren",
+    "converting": "Konvertierung läuft...",
+    "reset": "Zurücksetzen",
+    "result_title": "Ergebnis",
+    "copy": "Ergebnis kopieren",
+    "copy_success": "Erfolgreich kopiert!",
+    "copy_failed": "Kopieren fehlgeschlagen",
+    "success": "{count} Links erfolgreich konvertiert",
+    "partial_success": "{converted} konvertiert, {failed} fehlgeschlagen",
+    "failed": "Konvertierung fehlgeschlagen",
+    "stat_created": "{count} erstellt",
+    "stat_failed": "{count} fehlgeschlagen",
+    "stat_total": "{count} URLs erkannt"
   }
 }

@@ -55,6 +55,7 @@
     "analysis": "Analisis",
     "realtime": "Real-time",
     "check": "Check",
+    "batch_convert": "Konversi Batch",
     "migrate": "Impor/Ekspor"
   },
   "sidebar": {
@@ -415,5 +416,27 @@
         "parse_error": "Gagal mengurai file"
       }
     }
+  },
+  "batch_convert": {
+    "title": "Konversi Batch",
+    "description": "Tempel teks yang berisi beberapa URL dan secara otomatis mengonversinya menjadi tautan pendek",
+    "input_label": "Konten",
+    "input_placeholder": "Tempel teks yang berisi URL di sini, misalnya:\nNama Produk\nTautan https://example.com/abc\nBeli https://example.com/def\nRp15.900 gratis ongkir",
+    "expiration_label": "Kadaluarsa Seragam",
+    "expiration_description": "Atur waktu kadaluarsa seragam untuk semua tautan pendek. Biarkan kosong untuk tanpa kadaluarsa.",
+    "pick_date": "Pilih tanggal",
+    "button": "Mulai Konversi",
+    "converting": "Mengonversi...",
+    "reset": "Atur Ulang",
+    "result_title": "Hasil Konversi",
+    "copy": "Salin Hasil",
+    "copy_success": "Berhasil disalin!",
+    "copy_failed": "Gagal menyalin",
+    "success": "Berhasil mengonversi {count} tautan",
+    "partial_success": "{converted} berhasil, {failed} gagal",
+    "failed": "Konversi gagal",
+    "stat_created": "{count} dibuat",
+    "stat_failed": "{count} gagal",
+    "stat_total": "{count} URL terdeteksi"
   }
 }

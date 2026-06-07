@@ -34,6 +34,12 @@ const platformItems = computed<NavItem[]>(() => [
     icon: DASHBOARD_ROUTES.check.icon,
     isActive: isActive('check'),
   },
+  {
+    title: 'nav.batch_convert',
+    url: '/dashboard/batch-convert',
+    icon: DASHBOARD_ROUTES.batchConvert.icon,
+    isActive: isActive('batchConvert'),
+  },
 ])
 
 const settingsItems = computed<NavItem[]>(() => [

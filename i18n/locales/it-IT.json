@@ -55,6 +55,7 @@
     "analysis": "Analisi",
     "realtime": "In Tempo Reale",
     "check": "Check",
+    "batch_convert": "Conversione batch",
     "migrate": "Importa/Esporta"
   },
   "sidebar": {
@@ -415,5 +416,27 @@
         "parse_error": "Analisi del file fallita"
       }
     }
+  },
+  "batch_convert": {
+    "title": "Conversione batch",
+    "description": "Incolla testo contenente più URL e convertili automaticamente in link brevi",
+    "input_label": "Contenuto",
+    "input_placeholder": "Incolla qui testo con URL, ad esempio:\nNome prodotto\nLink https://example.com/abc\nAcquista https://example.com/def\n15,9€ spedizione gratuita",
+    "expiration_label": "Scadenza unificata",
+    "expiration_description": "Imposta una data di scadenza unificata per tutti i link brevi generati. Lascia vuoto per nessuna scadenza.",
+    "pick_date": "Scegli data",
+    "button": "Converti",
+    "converting": "Conversione in corso...",
+    "reset": "Ripristina",
+    "result_title": "Risultato",
+    "copy": "Copia risultato",
+    "copy_success": "Copia riuscita!",
+    "copy_failed": "Copia fallita",
+    "success": "{count} link convertiti con successo",
+    "partial_success": "{converted} convertiti, {failed} falliti",
+    "failed": "Conversione fallita",
+    "stat_created": "{count} creati",
+    "stat_failed": "{count} falliti",
+    "stat_total": "{count} URL rilevati"
   }
 }

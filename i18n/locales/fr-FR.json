@@ -55,6 +55,7 @@
     "analysis": "Statistiques",
     "realtime": "Realtime",
     "check": "Check",
+    "batch_convert": "Conversion groupée",
     "migrate": "Import/Export"
   },
   "sidebar": {
@@ -415,5 +416,27 @@
         "parse_error": "Échec de l'analyse du fichier"
       }
     }
+  },
+  "batch_convert": {
+    "title": "Conversion groupée",
+    "description": "Collez du texte contenant plusieurs URLs et convertissez-les automatiquement en liens courts",
+    "input_label": "Contenu",
+    "input_placeholder": "Collez ici du texte contenant des URLs, par exemple :\nNom du produit\nLien https://example.com/abc\nAcheter https://example.com/def\n15,9€ livraison gratuite",
+    "expiration_label": "Expiration unifiée",
+    "expiration_description": "Définir une date d'expiration pour tous les liens courts générés. Laisser vide pour aucune expiration.",
+    "pick_date": "Choisir une date",
+    "button": "Convertir",
+    "converting": "Conversion en cours...",
+    "reset": "Réinitialiser",
+    "result_title": "Résultat",
+    "copy": "Copier le résultat",
+    "copy_success": "Copie réussie !",
+    "copy_failed": "Échec de la copie",
+    "success": "{count} liens convertis avec succès",
+    "partial_success": "{converted} convertis, {failed} échoués",
+    "failed": "Échec de la conversion",
+    "stat_created": "{count} créés",
+    "stat_failed": "{count} échoués",
+    "stat_total": "{count} URLs détectées"
   }
 }

@@ -55,6 +55,7 @@
     "analysis": "Phân tích",
     "realtime": "Thời gian thực",
     "check": "Check",
+    "batch_convert": "Chuyển đổi hàng loạt",
     "migrate": "Nhập/Xuất"
   },
   "sidebar": {
@@ -415,5 +416,27 @@
         "parse_error": "Không thể phân tích tệp"
       }
     }
+  },
+  "batch_convert": {
+    "title": "Chuyển đổi hàng loạt",
+    "description": "Dán văn bản chứa nhiều URL và tự động chuyển đổi tất cả thành liên kết ngắn",
+    "input_label": "Nội dung",
+    "input_placeholder": "Dán văn bản chứa URL tại đây, ví dụ:\nTên sản phẩm\nLiên kết https://example.com/abc\nMua https://example.com/def\n15.9đ miễn phí vận chuyển",
+    "expiration_label": "Thời hạn thống nhất",
+    "expiration_description": "Đặt thời hạn thống nhất cho tất cả liên kết ngắn được tạo. Để trống nếu không muốn hết hạn.",
+    "pick_date": "Chọn ngày",
+    "button": "Bắt đầu chuyển đổi",
+    "converting": "Đang chuyển đổi...",
+    "reset": "Đặt lại",
+    "result_title": "Kết quả",
+    "copy": "Sao chép kết quả",
+    "copy_success": "Sao chép thành công!",
+    "copy_failed": "Sao chép thất bại",
+    "success": "Đã chuyển đổi thành công {count} liên kết",
+    "partial_success": "Thành công {converted}, thất bại {failed}",
+    "failed": "Chuyển đổi thất bại",
+    "stat_created": "Đã tạo {count}",
+    "stat_failed": "Thất bại {count}",
+    "stat_total": "Đã phát hiện {count} URL"
   }
 }

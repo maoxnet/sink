@@ -55,6 +55,7 @@
     "analysis": "分析",
     "realtime": "实时",
     "check": "检测",
+    "batch_convert": "批量转链",
     "migrate": "导入/导出"
   },
   "sidebar": {
@@ -415,5 +416,27 @@
         "parse_error": "文件解析失败"
       }
     }
+  },
+  "batch_convert": {
+    "title": "批量转链",
+    "description": "粘贴包含多个链接的文本，自动将所有 URL 转换为短链接",
+    "input_label": "输入内容",
+    "input_placeholder": "在此粘贴包含链接的文本，例如：\n三只松鼠 水牛乳千层吐司1kg\n领 https://3.cn/2-RaZ9T2\n拍 https://u.jd.com/7G0LL3f\n15.9元自营包邮，独立包装",
+    "expiration_label": "统一失效时间",
+    "expiration_description": "为所有生成的短链接设置统一的过期时间，留空则永不过期",
+    "pick_date": "选择日期",
+    "button": "开始转链",
+    "converting": "转链中...",
+    "reset": "重置",
+    "result_title": "转链结果",
+    "copy": "复制结果",
+    "copy_success": "复制成功！",
+    "copy_failed": "复制失败",
+    "success": "成功转换 {count} 个链接",
+    "partial_success": "成功转换 {converted} 个，{failed} 个失败",
+    "failed": "转链失败",
+    "stat_created": "已创建 {count} 个",
+    "stat_failed": "失败 {count} 个",
+    "stat_total": "共识别 {count} 个链接"
   }
 }

@@ -1,6 +1,6 @@
 import type { Component } from 'vue'
 import { useRoute } from '#imports'
-import { Activity, ChartArea, FolderSync, Link, ScanSearch } from 'lucide-vue-next'
+import { Activity, ChartArea, FolderSync, Link, ScanSearch, Repeat } from 'lucide-vue-next'
 import { computed } from 'vue'
 
 export interface DashboardRouteConfig {
@@ -34,6 +34,11 @@ export const DASHBOARD_ROUTES = {
     paths: ['/dashboard/check'],
     titleKey: 'nav.check',
     icon: ScanSearch,
+  },
+  batchConvert: {
+    paths: ['/dashboard/batch-convert'],
+    titleKey: 'nav.batch_convert',
+    icon: Repeat,
   },
   migrate: {
     paths: ['/dashboard/migrate'],

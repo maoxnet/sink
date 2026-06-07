@@ -55,6 +55,7 @@
     "analysis": "Analysis",
     "realtime": "Realtime",
     "check": "Check",
+    "batch_convert": "Batch Convert",
     "migrate": "Import/Export"
   },
   "sidebar": {
@@ -415,5 +416,27 @@
         "parse_error": "Failed to parse file"
       }
     }
+  },
+  "batch_convert": {
+    "title": "Batch Convert",
+    "description": "Paste text containing multiple URLs and automatically convert them all to short links",
+    "input_label": "Input Content",
+    "input_placeholder": "Paste text containing URLs here, e.g.:\nProduct Name\nLink https://example.com/abc\nBuy https://example.com/def\n$15.9 free shipping",
+    "expiration_label": "Unified Expiration",
+    "expiration_description": "Set a unified expiration time for all generated short links. Leave empty for no expiration.",
+    "pick_date": "Pick a date",
+    "button": "Start Convert",
+    "converting": "Converting...",
+    "reset": "Reset",
+    "result_title": "Convert Result",
+    "copy": "Copy Result",
+    "copy_success": "Copy successful!",
+    "copy_failed": "Copy failed",
+    "success": "Successfully converted {count} links",
+    "partial_success": "Converted {converted}, {failed} failed",
+    "failed": "Convert failed",
+    "stat_created": "{count} created",
+    "stat_failed": "{count} failed",
+    "stat_total": "{count} URLs detected"
   }
 }

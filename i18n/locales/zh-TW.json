@@ -55,6 +55,7 @@
     "analysis": "分析",
     "realtime": "即時",
     "check": "檢查",
+    "batch_convert": "批次轉鏈",
     "migrate": "匯入/匯出"
   },
   "sidebar": {
@@ -415,5 +416,27 @@
         "parse_error": "檔案解析失敗"
       }
     }
+  },
+  "batch_convert": {
+    "title": "批次轉鏈",
+    "description": "貼上包含多個連結的文字，自動將所有 URL 轉換為短連結",
+    "input_label": "輸入內容",
+    "input_placeholder": "在此貼上包含連結的文字，例如：\n三隻松鼠 水牛乳千層吐司1kg\n領 https://3.cn/2-RaZ9T2\n拍 https://u.jd.com/7G0LL3f\n15.9元自營包邮，獨立包裝",
+    "expiration_label": "統一失效時間",
+    "expiration_description": "為所有生成的短連結設定統一的過期時間，留空則永不過期",
+    "pick_date": "選擇日期",
+    "button": "開始轉鏈",
+    "converting": "轉鏈中...",
+    "reset": "重置",
+    "result_title": "轉鏈結果",
+    "copy": "複製結果",
+    "copy_success": "複製成功！",
+    "copy_failed": "複製失敗",
+    "success": "成功轉換 {count} 個連結",
+    "partial_success": "成功轉換 {converted} 個，{failed} 個失敗",
+    "failed": "轉鏈失敗",
+    "stat_created": "已建立 {count} 個",
+    "stat_failed": "失敗 {count} 個",
+    "stat_total": "共識別 {count} 個連結"
   }
 }
