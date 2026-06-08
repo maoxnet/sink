@@ -231,13 +231,7 @@ function reset() {
     <!-- Result Section -->
     <Card v-if="hasResult">
       <CardHeader>
-        <div class="flex items-center justify-between">
-          <CardTitle>{{ $t('batch_convert.result_title') }}</CardTitle>
-          <Button variant="outline" size="sm" @click="copyResult">
-            <Copy class="mr-2 h-4 w-4" />
-            {{ $t('batch_convert.copy') }}
-          </Button>
-        </div>
+        <CardTitle>{{ $t('batch_convert.result_title') }}</CardTitle>
         <!-- Stats -->
         <div v-if="convertResult" class="flex flex-wrap gap-4 text-sm text-muted-foreground">
           <div class="flex items-center gap-1.5">
@@ -253,12 +247,23 @@ function reset() {
           </div>
         </div>
       </CardHeader>
-      <CardContent class="px-0">
-        <Textarea
-          v-model="resultText"
-          :rows="12"
-          class="resize-y rounded-none border-x-0 font-mono text-sm shadow-none focus-visible:ring-0"
-        />
+      <CardContent>
+        <div class="flex gap-2">
+          <Textarea
+            v-model="resultText"
+            :rows="12"
+            class="resize-y font-mono text-sm"
+          />
+          <Button
+            variant="outline"
+            size="icon"
+            class="shrink-0 self-start"
+            :aria-label="$t('batch_convert.copy')"
+            @click="copyResult"
+          >
+            <Copy class="h-4 w-4" />
+          </Button>
+        </div>
       </CardContent>
     </Card>
   </div>
