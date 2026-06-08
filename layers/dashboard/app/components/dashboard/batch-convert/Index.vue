@@ -120,7 +120,7 @@ function reset() {
             id="batch-input"
             v-model="inputText"
             :placeholder="$t('batch_convert.input_placeholder')"
-            :rows="8"
+            :rows="12"
             class="resize-y font-mono text-sm"
           />
         </div>
@@ -231,10 +231,12 @@ function reset() {
           </div>
         </div>
       </CardHeader>
-      <CardContent>
-        <div class="rounded-lg border bg-muted/30 p-4">
-          <pre class="whitespace-pre-wrap break-all font-mono text-sm leading-relaxed">{{ resultText }}</pre>
-        </div>
+      <CardContent class="px-0">
+        <Textarea
+          v-model="resultText"
+          :rows="12"
+          class="resize-y rounded-none border-x-0 font-mono text-sm shadow-none focus-visible:ring-0"
+        />
       </CardContent>
     </Card>
   </div>
