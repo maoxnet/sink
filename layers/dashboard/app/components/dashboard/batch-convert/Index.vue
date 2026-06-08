@@ -233,7 +233,7 @@ function reset() {
       </CardHeader>
       <CardContent>
         <div class="rounded-lg border bg-muted/30 p-4">
-          <pre class="whitespace-pre-wrap break-all font-mono text-sm leading-relaxed">{{ resultText }}</pre>
+          <textarea class="whitespace-pre-wrap break-all font-mono text-sm leading-relaxed">{{ resultText }}</textarea>
         </div>
       </CardContent>
     </Card>
