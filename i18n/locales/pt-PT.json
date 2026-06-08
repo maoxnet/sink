@@ -421,7 +421,7 @@
     "title": "Conversão em lote",
     "description": "Cole texto contendo vários URLs e converta-os automaticamente em links curtos",
     "input_label": "Conteúdo",
-    "input_placeholder": "Cole aqui texto com URLs, por exemplo:\nNome do Produto\nLink https://example.com/abc\nComprar https://example.com/def\n15,90€ envio grátis",
+    "input_placeholder": "Cole aqui texto com URLs",
     "expiration_label": "Expiração unificada",
     "expiration_description": "Defina uma expiração unificada para todos os links curtos gerados. Deixe vazio para sem expiração.",
     "pick_date": "Escolher data",

@@ -421,7 +421,7 @@
     "title": "Conversione batch",
     "description": "Incolla testo contenente più URL e convertili automaticamente in link brevi",
     "input_label": "Contenuto",
-    "input_placeholder": "Incolla qui testo con URL, ad esempio:\nNome prodotto\nLink https://example.com/abc\nAcquista https://example.com/def\n15,9€ spedizione gratuita",
+    "input_placeholder": "Incolla qui testo con URL",
     "expiration_label": "Scadenza unificata",
     "expiration_description": "Imposta una data di scadenza unificata per tutti i link brevi generati. Lascia vuoto per nessuna scadenza.",
     "pick_date": "Scegli data",

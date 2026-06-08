@@ -421,7 +421,7 @@
     "title": "Batch Convert",
     "description": "Paste text containing multiple URLs and automatically convert them all to short links",
     "input_label": "Input Content",
-    "input_placeholder": "Paste text containing URLs here, e.g.:\nProduct Name\nLink https://example.com/abc\nBuy https://example.com/def\n$15.9 free shipping",
+    "input_placeholder": "Paste text containing URLs here",
     "expiration_label": "Unified Expiration",
     "expiration_description": "Set a unified expiration time for all generated short links. Leave empty for no expiration.",
     "pick_date": "Pick a date",

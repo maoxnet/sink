@@ -421,7 +421,7 @@
     "title": "批次轉鏈",
     "description": "貼上包含多個連結的文字，自動將所有 URL 轉換為短連結",
     "input_label": "輸入內容",
-    "input_placeholder": "在此貼上包含連結的文字，例如：\n三隻松鼠 水牛乳千層吐司1kg\n領 https://3.cn/2-RaZ9T2\n拍 https://u.jd.com/7G0LL3f\n15.9元自營包邮，獨立包裝",
+    "input_placeholder": "在此貼上包含連結的文字",
     "expiration_label": "統一失效時間",
     "expiration_description": "為所有生成的短連結設定統一的過期時間，留空則永不過期",
     "pick_date": "選擇日期",

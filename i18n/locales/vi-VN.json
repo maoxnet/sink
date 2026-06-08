@@ -421,7 +421,7 @@
     "title": "Chuyển đổi hàng loạt",
     "description": "Dán văn bản chứa nhiều URL và tự động chuyển đổi tất cả thành liên kết ngắn",
     "input_label": "Nội dung",
-    "input_placeholder": "Dán văn bản chứa URL tại đây, ví dụ:\nTên sản phẩm\nLiên kết https://example.com/abc\nMua https://example.com/def\n15.9đ miễn phí vận chuyển",
+    "input_placeholder": "Dán văn bản chứa URL tại đây",
     "expiration_label": "Thời hạn thống nhất",
     "expiration_description": "Đặt thời hạn thống nhất cho tất cả liên kết ngắn được tạo. Để trống nếu không muốn hết hạn.",
     "pick_date": "Chọn ngày",
