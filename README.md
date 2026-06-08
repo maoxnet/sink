@@ -47,8 +47,8 @@
 
 ## ✨ Features
 
-- **🔗 Batch Short Link:** Bulk convert links in text to short links while retaining the original content format.
 - **🔗 URL Shortening:** Compress your URLs to their minimal length.
+- **🔗 Batch Short Link:** Bulk convert links in text to short links while retaining the original content format.
 - **📈 Analytics:** Monitor link analytics and gather insightful statistics.
 - **☁️ Serverless:** Deploy without the need for traditional servers.
 - **🎨 Customizable Slug:** Support personalized slugs, UTM parameters, and case sensitivity.
