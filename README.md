@@ -2,14 +2,6 @@
 
 **A Simple / Speedy / Secure Link Shortener with Analytics, 100% run on Cloudflare.**
 
-<a href="https://trendshift.io/repositories/10421" target="_blank">
-  <img
-    src="https://trendshift.io/api/badge/repositories/10421"
-    alt="miantiao-me/Sink | Trendshift"
-    width="250"
-    height="55"
-  />
-</a>
 <a href="https://news.ycombinator.com/item?id=40843683" target="_blank">
   <img
     src="https://hackernews-badge.vercel.app/api?id=40843683"
