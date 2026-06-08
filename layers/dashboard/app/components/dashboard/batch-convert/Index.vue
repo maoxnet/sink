@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { DateValue } from '@internationalized/date'
 import { today, getLocalTimeZone } from '@internationalized/date'
-import { CalendarIcon, CheckCircle, Copy, Loader2, RefreshCw, RotateCcw, XCircle } from 'lucide-vue-next'
+import { CalendarIcon, CheckCircle, ClipboardPaste, Copy, Loader2, RefreshCw, RotateCcw, XCircle } from 'lucide-vue-next'
 import { toast } from 'vue-sonner'
 import { cn } from '@/lib/utils'
 
@@ -26,6 +26,17 @@ const convertError = ref('')
 
 const hasInput = computed(() => inputText.value.trim().length > 0)
 const hasResult = computed(() => resultText.value.length > 0)
+
+async function handlePaste() {
+  try {
+    const text = await navigator.clipboard.readText()
+    inputText.value = text
+    toast.success(t('batch_convert.paste_success'))
+  }
+  catch {
+    toast.error(t('batch_convert.paste_failed'))
+  }
+}
 
 function getExpirationTimestamp(date: DateValue | undefined): number | undefined {
   if (!date)
@@ -116,13 +127,24 @@ function reset() {
           <label for="batch-input" class="text-sm font-medium">
             {{ $t('batch_convert.input_label') }}
           </label>
-          <Textarea
-            id="batch-input"
-            v-model="inputText"
-            :placeholder="$t('batch_convert.input_placeholder')"
-            :rows="12"
-            class="resize-y font-mono text-sm"
-          />
+          <div class="flex gap-2">
+            <Textarea
+              id="batch-input"
+              v-model="inputText"
+              :placeholder="$t('batch_convert.input_placeholder')"
+              :rows="12"
+              class="resize-y font-mono text-sm"
+            />
+            <Button
+              variant="outline"
+              size="icon"
+              class="shrink-0 self-start"
+              :aria-label="$t('batch_convert.paste')"
+              @click="handlePaste"
+            >
+              <ClipboardPaste class="h-4 w-4" />
+            </Button>
+          </div>
         </div>
 
         <!-- Expiration Setting -->
