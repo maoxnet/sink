@@ -131,7 +131,7 @@ function reset() {
         <div class="flex items-center gap-2">
           <Checkbox
             id="jd-red-packet"
-            v-model:checked="addJdRedPacket"
+            v-model="addJdRedPacket"
           />
           <label for="jd-red-packet" class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
             {{ $t('batch_convert.jd_red_packet') }}
