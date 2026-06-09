@@ -55,7 +55,7 @@
     "analysis": "分析",
     "realtime": "即時",
     "check": "檢查",
-    "batch_convert": "批次轉鏈",
+    "batch_convert": "批次",
     "migrate": "匯入/匯出"
   },
   "sidebar": {
@@ -418,13 +418,15 @@
     }
   },
   "batch_convert": {
-    "title": "批次轉鏈",
+    "title": "批次",
     "description": "貼上包含多個連結的文字，自動將所有 URL 轉換為短連結",
     "input_label": "輸入內容",
     "jd_red_packet": "加入京東紅包",
     "input_placeholder": "在此貼上包含連結的文字，例如：\n三隻松鼠 水牛乳千層吐司1kg\n領 https://3.cn/2-RaZ9T2\n拍 https://u.jd.com/7G0LL3f\n15.9元自營包邮，獨立包裝",
-    "expiration_label": "統一失效時間",
+    "expiration_label": "失效時間",
     "expiration_description": "為所有生成的短連結設定統一的過期時間，留空則永不過期",
+    "comment_label": "備註",
+    "comment_description": "為所有生成的短連結設定統一的備註內容",
     "pick_date": "選擇日期",
     "button": "開始轉鏈",
     "converting": "轉鏈中...",

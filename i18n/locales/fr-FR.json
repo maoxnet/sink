@@ -55,7 +55,7 @@
     "analysis": "Statistiques",
     "realtime": "Realtime",
     "check": "Check",
-    "batch_convert": "Conversion groupée",
+    "batch_convert": "Batch",
     "migrate": "Import/Export"
   },
   "sidebar": {
@@ -418,13 +418,15 @@
     }
   },
   "batch_convert": {
-    "title": "Conversion groupée",
+    "title": "Batch",
     "description": "Collez du texte contenant plusieurs URLs et convertissez-les automatiquement en liens courts",
     "input_label": "Contenu",
     "jd_red_packet": "Ajouter un bonus JD",
     "input_placeholder": "Collez ici du texte contenant des URLs, par exemple :\nNom du produit\nLien https://example.com/abc\nAcheter https://example.com/def\n15,9€ livraison gratuite",
-    "expiration_label": "Expiration unifiée",
+    "expiration_label": "Expiration",
     "expiration_description": "Définir une date d'expiration pour tous les liens courts générés. Laisser vide pour aucune expiration.",
+    "comment_label": "Commentaire",
+    "comment_description": "Définir un commentaire unifié pour tous les liens courts générés",
     "pick_date": "Choisir une date",
     "button": "Convertir",
     "converting": "Conversion en cours...",

@@ -55,7 +55,7 @@
     "analysis": "Analysis",
     "realtime": "Realtime",
     "check": "Check",
-    "batch_convert": "Batch Convert",
+    "batch_convert": "Batch",
     "migrate": "Import/Export"
   },
   "sidebar": {
@@ -418,13 +418,15 @@
     }
   },
   "batch_convert": {
-    "title": "Batch Convert",
+    "title": "Batch",
     "description": "Paste text containing multiple URLs and automatically convert them all to short links",
     "input_label": "Input Content",
     "jd_red_packet": "Add JD Red Packet",
     "input_placeholder": "Paste text containing URLs here, e.g.:\nProduct Name\nLink https://example.com/abc\nBuy https://example.com/def\n$15.9 free shipping",
-    "expiration_label": "Unified Expiration",
+    "expiration_label": "Expiration",
     "expiration_description": "Set a unified expiration time for all generated short links. Leave empty for no expiration.",
+    "comment_label": "Comment",
+    "comment_description": "Set a unified comment for all generated short links",
     "pick_date": "Pick a date",
     "button": "Start Convert",
     "converting": "Converting...",

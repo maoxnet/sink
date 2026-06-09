@@ -55,7 +55,7 @@
     "analysis": "Analisi",
     "realtime": "In Tempo Reale",
     "check": "Check",
-    "batch_convert": "Conversione batch",
+    "batch_convert": "Batch",
     "migrate": "Importa/Esporta"
   },
   "sidebar": {
@@ -418,13 +418,15 @@
     }
   },
   "batch_convert": {
-    "title": "Conversione batch",
+    "title": "Batch",
     "description": "Incolla testo contenente più URL e convertili automaticamente in link brevi",
     "input_label": "Contenuto",
     "jd_red_packet": "Aggiungi Red Packet JD",
     "input_placeholder": "Incolla qui testo con URL, ad esempio:\nNome prodotto\nLink https://example.com/abc\nAcquista https://example.com/def\n15,9€ spedizione gratuita",
-    "expiration_label": "Scadenza unificata",
+    "expiration_label": "Scadenza",
     "expiration_description": "Imposta una data di scadenza unificata per tutti i link brevi generati. Lascia vuoto per nessuna scadenza.",
+    "comment_label": "Commento",
+    "comment_description": "Imposta un commento unificato per tutti i link brevi generati",
     "pick_date": "Scegli data",
     "button": "Converti",
     "converting": "Conversione in corso...",

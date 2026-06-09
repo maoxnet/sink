@@ -26,12 +26,13 @@ defineRouteMeta({
 const BatchConvertSchema = z.object({
   text: z.string().trim().min(1).max(50000),
   expiration: z.number().int().safe().optional(),
+  comment: z.string().trim().max(2048).optional(),
 })
 
 const URL_REGEX = /https?:\/\/[^\s<>"{}|\\^`\]]+/g
 
 export default eventHandler(async (event) => {
-  const { text, expiration } = await readValidatedBody(event, BatchConvertSchema.parse)
+  const { text, expiration, comment } = await readValidatedBody(event, BatchConvertSchema.parse)
 
   // Validate expiration if provided
   if (expiration !== undefined && expiration <= Math.floor(Date.now() / 1000)) {
@@ -60,7 +61,7 @@ export default eventHandler(async (event) => {
 
   for (const url of uniqueUrls) {
     try {
-      const linkData = { url, expiration }
+      const linkData = { url, expiration, comment }
       const link = await LinkSchema.parseAsync(linkData)
       await prepareIncomingLink(event, link)
       await hashLinkPasswordForCreate(link)

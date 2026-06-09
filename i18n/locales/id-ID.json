@@ -55,7 +55,7 @@
     "analysis": "Analisis",
     "realtime": "Real-time",
     "check": "Check",
-    "batch_convert": "Konversi Batch",
+    "batch_convert": "Batch",
     "migrate": "Impor/Ekspor"
   },
   "sidebar": {
@@ -418,13 +418,15 @@
     }
   },
   "batch_convert": {
-    "title": "Konversi Batch",
+    "title": "Batch",
     "description": "Tempel teks yang berisi beberapa URL dan secara otomatis mengonversinya menjadi tautan pendek",
     "input_label": "Konten",
     "jd_red_packet": "Tambah Red Packet JD",
     "input_placeholder": "Tempel teks yang berisi URL di sini, misalnya:\nNama Produk\nTautan https://example.com/abc\nBeli https://example.com/def\nRp15.900 gratis ongkir",
-    "expiration_label": "Kadaluarsa Seragam",
+    "expiration_label": "Kadaluarsa",
     "expiration_description": "Atur waktu kadaluarsa seragam untuk semua tautan pendek. Biarkan kosong untuk tanpa kadaluarsa.",
+    "comment_label": "Komentar",
+    "comment_description": "Atur komentar seragam untuk semua tautan pendek",
     "pick_date": "Pilih tanggal",
     "button": "Mulai Konversi",
     "converting": "Mengonversi...",

@@ -55,7 +55,7 @@
     "analysis": "Análise",
     "realtime": "Tempo Real",
     "check": "Check",
-    "batch_convert": "Conversão em lote",
+    "batch_convert": "Lote",
     "migrate": "Importar/Exportar"
   },
   "sidebar": {
@@ -418,13 +418,15 @@
     }
   },
   "batch_convert": {
-    "title": "Conversão em lote",
+    "title": "Lote",
     "description": "Cole texto contendo vários URLs e converta-os automaticamente em links curtos",
     "input_label": "Conteúdo",
     "jd_red_packet": "Adicionar Red Packet JD",
     "input_placeholder": "Cole aqui texto com URLs, por exemplo:\nNome do Produto\nLink https://example.com/abc\nComprar https://example.com/def\nR$15,90 frete grátis",
-    "expiration_label": "Expiração unificada",
+    "expiration_label": "Expiração",
     "expiration_description": "Defina uma expiração unificada para todos os links curtos gerados. Deixe vazio para sem expiração.",
+    "comment_label": "Comentário",
+    "comment_description": "Defina um comentário unificado para todos os links curtos gerados",
     "pick_date": "Escolher data",
     "button": "Converter",
     "converting": "Convertendo...",

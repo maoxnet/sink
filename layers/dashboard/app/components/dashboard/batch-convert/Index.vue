@@ -19,6 +19,7 @@ const inputText = ref('')
 const addJdRedPacket = ref(false)
 const expirationDate = ref<DateValue | undefined>()
 const datePickerOpen = ref(false)
+const comment = ref('')
 
 const isConverting = ref(false)
 const resultText = ref('')
@@ -62,12 +63,14 @@ async function handleConvert() {
   resultText.value = ''
 
   try {
-    const body: { text: string, expiration?: number } = {
+    const body: { text: string, expiration?: number, comment?: string } = {
       text: inputText.value,
     }
     const exp = getExpirationTimestamp(expirationDate.value)
     if (exp)
       body.expiration = exp
+    if (comment.value.trim())
+      body.comment = comment.value.trim()
 
     const data = await useAPI<BatchConvertResponse>('/api/link/batch-convert', {
       method: 'POST',
@@ -115,6 +118,7 @@ function reset() {
   convertResult.value = null
   convertError.value = ''
   expirationDate.value = undefined
+  comment.value = ''
 }
 </script>
 
@@ -161,6 +165,19 @@ function reset() {
               <ClipboardPaste class="h-4 w-4" />
             </Button>
           </div>
+        </div>
+
+        <!-- Comment Setting -->
+        <div class="space-y-2">
+          <label for="batch-comment" class="text-sm font-medium">
+            {{ $t('batch_convert.comment_label') }}
+          </label>
+          <Input
+            id="batch-comment"
+            v-model="comment"
+            :placeholder="$t('batch_convert.comment_description')"
+            class="text-sm"
+          />
         </div>
 
         <!-- Expiration Setting -->
