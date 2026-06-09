@@ -421,6 +421,7 @@
     "title": "Conversion groupée",
     "description": "Collez du texte contenant plusieurs URLs et convertissez-les automatiquement en liens courts",
     "input_label": "Contenu",
+    "jd_red_packet": "Ajouter un bonus JD",
     "input_placeholder": "Collez ici du texte contenant des URLs, par exemple :\nNom du produit\nLien https://example.com/abc\nAcheter https://example.com/def\n15,9€ livraison gratuite",
     "expiration_label": "Expiration unifiée",
     "expiration_description": "Définir une date d'expiration pour tous les liens courts générés. Laisser vide pour aucune expiration.",

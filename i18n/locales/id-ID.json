@@ -421,6 +421,7 @@
     "title": "Konversi Batch",
     "description": "Tempel teks yang berisi beberapa URL dan secara otomatis mengonversinya menjadi tautan pendek",
     "input_label": "Konten",
+    "jd_red_packet": "Tambah Red Packet JD",
     "input_placeholder": "Tempel teks yang berisi URL di sini, misalnya:\nNama Produk\nTautan https://example.com/abc\nBeli https://example.com/def\nRp15.900 gratis ongkir",
     "expiration_label": "Kadaluarsa Seragam",
     "expiration_description": "Atur waktu kadaluarsa seragam untuk semua tautan pendek. Biarkan kosong untuk tanpa kadaluarsa.",

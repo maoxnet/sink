@@ -421,6 +421,7 @@
     "title": "Massenkonvertierung",
     "description": "Fügen Sie Text mit mehreren URLs ein und konvertieren Sie diese automatisch in Kurzlinks",
     "input_label": "Inhalt",
+    "jd_red_packet": "JD Red Packet hinzufügen",
     "input_placeholder": "Fügen Sie hier Text mit URLs ein, z.B.:\nProduktname\nLink https://example.com/abc\nKaufen https://example.com/def\n15,9€ kostenloser Versand",
     "expiration_label": "Einheitliches Ablaufdatum",
     "expiration_description": "Legen Sie ein einheitliches Ablaufdatum für alle generierten Kurzlinks fest. Leer lassen für kein Ablaufdatum.",

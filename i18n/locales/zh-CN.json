@@ -421,6 +421,7 @@
     "title": "批量转链",
     "description": "粘贴包含多个链接的文本，自动将所有 URL 转换为短链接",
     "input_label": "输入内容",
+    "jd_red_packet": "加入京东红包",
     "input_placeholder": "在此粘贴包含链接的文本，例如：\n三只松鼠 水牛乳千层吐司1kg\n领 https://3.cn/2-RaZ9T2\n拍 https://u.jd.com/7G0LL3f\n15.9元自营包邮，独立包装",
     "expiration_label": "统一失效时间",
     "expiration_description": "为所有生成的短链接设置统一的过期时间，留空则永不过期",

@@ -16,6 +16,7 @@ interface BatchConvertResponse {
 }
 
 const inputText = ref('')
+const addJdRedPacket = ref(false)
 const expirationDate = ref<DateValue | undefined>()
 const datePickerOpen = ref(false)
 
@@ -76,6 +77,10 @@ async function handleConvert() {
     resultText.value = data.result
     convertResult.value = data
 
+    if (addJdRedPacket.value) {
+      resultText.value = `领红包 https://maox.net/lucky\n${resultText.value}`
+    }
+
     if (data.failed > 0) {
       toast.warning(t('batch_convert.partial_success', { converted: data.converted, failed: data.failed }))
     }
@@ -122,6 +127,17 @@ function reset() {
         <CardDescription>{{ $t('batch_convert.description') }}</CardDescription>
       </CardHeader>
       <CardContent class="space-y-4">
+        <!-- JD Red Packet Option -->
+        <div class="flex items-center gap-2">
+          <Checkbox
+            id="jd-red-packet"
+            v-model:checked="addJdRedPacket"
+          />
+          <label for="jd-red-packet" class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+            {{ $t('batch_convert.jd_red_packet') }}
+          </label>
+        </div>
+
         <!-- Text Input -->
         <div class="space-y-2">
           <label for="batch-input" class="text-sm font-medium">
