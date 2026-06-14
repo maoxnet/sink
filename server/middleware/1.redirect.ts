@@ -19,11 +19,48 @@ const SOCIAL_BOTS = [
   'whatsapp',
 ]
 
+const SOCIAL_APP_UA_MARKERS = [
+  'micromessenger',
+  'wechat',
+  'qq/',
+  ' qq',
+  'qzone',
+  'weibo',
+  'aweme',
+  'douyin',
+  'tiktok',
+  'xiaohongshu',
+  'kuaishou',
+  'kwai',
+  'fbav',
+  'fban',
+  'instagram',
+  'threads',
+  'messenger',
+  'whatsapp',
+  'telegram',
+  'line/',
+  'twitter',
+  'linkedin',
+  'pinterest',
+  'snapchat',
+  'discord',
+  'slack',
+  'lark',
+  'feishu',
+  'dingtalk',
+]
+
 const APPLE_DEVICE_UA_MARKERS = ['iphone', 'ipad', 'ipod', 'crios']
 
 function isSocialBot(userAgent: string): boolean {
   const ua = userAgent.toLowerCase()
   return SOCIAL_BOTS.some(bot => ua.includes(bot))
+}
+
+function isSocialAppBrowser(userAgent: string): boolean {
+  const ua = userAgent.toLowerCase()
+  return SOCIAL_APP_UA_MARKERS.some(marker => ua.includes(marker))
 }
 
 function getDeviceRedirectUrl(userAgent: string, link: Link): string | null {
@@ -98,6 +135,12 @@ export default eventHandler(async (event) => {
 
       const deviceRedirectUrl = getDeviceRedirectUrl(userAgent, link)
       const finalTargetUrl = deviceRedirectUrl ?? targetUrl
+      const isSocialPreviewBot = isSocialBot(userAgent)
+
+      if (!isSocialPreviewBot && !isSocialAppBrowser(userAgent)) {
+        setResponseStatus(event, 403)
+        return sendNoStoreHtml(generateSocialAppRequiredHtml())
+      }
 
       // Password protection check
       if (link.password) {
@@ -155,7 +198,7 @@ export default eventHandler(async (event) => {
         return sendRedirect(event, finalTargetUrl, +redirectStatusCode)
       }
 
-      if (isSocialBot(userAgent) && hasOgConfig(link)) {
+      if (isSocialPreviewBot && hasOgConfig(link)) {
         const baseUrl = `${getRequestProtocol(event)}://${getRequestHost(event)}`
         const html = generateOgHtml(link, targetUrl, baseUrl)
         setHeader(event, 'Content-Type', 'text/html; charset=utf-8')

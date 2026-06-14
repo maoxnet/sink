@@ -56,6 +56,38 @@ export function generateCloakingHtml(link: Link, targetUrl: string, baseUrl: str
 </html>`
 }
 
+export function generateSocialAppRequiredHtml(): string {
+  const title = '请在社交软件中打开本链接'
+
+  return `<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>${escape(title)}</title>
+    <style>
+      *{margin:0;padding:0;box-sizing:border-box}
+      body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#09090b;color:#fafafa}
+      .card{background:#0a0a0a;border:1px solid #27272a;border-radius:8px;padding:2rem;width:100%;max-width:380px;margin:1rem;text-align:center;box-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06)}
+      .icon{width:3rem;height:3rem;margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;border-radius:999px;background:#18181b;color:#fafafa}
+      .icon svg{width:1.5rem;height:1.5rem}
+      h1{font-size:1.125rem;font-weight:600;margin-bottom:.75rem;letter-spacing:-.025em}
+      p{font-size:.875rem;color:#a1a1aa;line-height:1.6}
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
+        </div>
+        <h1>${escape(title)}</h1>
+        <p>当前访问环境不支持跳转，请复制或分享本链接后，在微信、QQ、微博、抖音、小红书等社交软件内打开。</p>
+    </div>
+</body>
+</html>`
+}
+
 interface PasswordHtmlOptions {
   hasError?: boolean
   locale?: RedirectLocale

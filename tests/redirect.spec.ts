@@ -4,6 +4,7 @@ import { deleteStoredLinks, fetch, postJson } from './utils'
 type CfRequestInit = RequestInit & { cf?: { country?: string } }
 
 const createdSlugs: string[] = []
+const socialUserAgent = 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.50'
 
 afterAll(async () => {
   await deleteStoredLinks(createdSlugs)
@@ -13,6 +14,28 @@ describe('/', () => {
   it('returns 200 for homepage request', async () => {
     const response = await fetch('/')
     expect(response.status).toBe(200)
+  })
+
+  it('blocks short link access outside social apps', async () => {
+    const slug = `social-app-only-${crypto.randomUUID()}`
+
+    const createResponse = await postJson('/api/link/create', {
+      url: 'https://example.com',
+      slug,
+    })
+    expect(createResponse.status).toBe(201)
+    createdSlugs.push(slug)
+
+    const response = await fetch(`/${slug}`, {
+      redirect: 'manual',
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+      },
+    })
+    const html = await response.text()
+
+    expect(response.status).toBe(403)
+    expect(html).toContain('请在社交软件中打开本链接')
   })
 
   it('redirects CriOS user agent to apple URL', async () => {
@@ -32,7 +55,7 @@ describe('/', () => {
     const response = await fetch(`/${slug}`, {
       redirect: 'manual',
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/147 Version/11.1.1 Safari/605.1.15',
+        'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/147 Version/11.1.1 Mobile/15E148 MicroMessenger/8.0.50',
       },
     })
 
@@ -52,7 +75,7 @@ describe('/', () => {
     expect(createResponse.status).toBe(201)
     createdSlugs.push(slug)
 
-    const options: CfRequestInit = { redirect: 'manual', cf: { country: 'CN' } }
+    const options: CfRequestInit = { redirect: 'manual', cf: { country: 'CN' }, headers: { 'User-Agent': socialUserAgent } }
     const response = await fetch(`/${slug}`, options as RequestInit)
 
     expect(response.status).toBe(301)
@@ -71,7 +94,7 @@ describe('/', () => {
     expect(createResponse.status).toBe(201)
     createdSlugs.push(slug)
 
-    const options: CfRequestInit = { redirect: 'manual', cf: { country: 'US' } }
+    const options: CfRequestInit = { redirect: 'manual', cf: { country: 'US' }, headers: { 'User-Agent': socialUserAgent } }
     const response = await fetch(`/${slug}`, options as RequestInit)
 
     expect(response.status).toBe(301)
@@ -91,7 +114,7 @@ describe('/', () => {
     expect(createResponse.status).toBe(201)
     createdSlugs.push(slug)
 
-    const options: CfRequestInit = { redirect: 'manual', cf: { country: 'CN' } }
+    const options: CfRequestInit = { redirect: 'manual', cf: { country: 'CN' }, headers: { 'User-Agent': socialUserAgent } }
     const response = await fetch(`/${slug}`, options as RequestInit)
     const html = await response.text()
 
@@ -111,7 +134,10 @@ describe('/', () => {
     expect(createResponse.status).toBe(201)
     createdSlugs.push(slug)
 
-    const response = await fetch(`/${slug}`, { redirect: 'manual' })
+    const response = await fetch(`/${slug}`, {
+      redirect: 'manual',
+      headers: { 'User-Agent': socialUserAgent },
+    })
     const html = await response.text()
 
     expect(response.status).toBe(200)
@@ -139,7 +165,7 @@ describe('/', () => {
       redirect: 'manual',
       cf: { country: 'CN' },
       headers: {
-        'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/147 Version/11.1.1 Mobile/15E148 Safari/604.1',
+        'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/147 Version/11.1.1 Mobile/15E148 MicroMessenger/8.0.50',
       },
     }
     const response = await fetch(`/${slug}`, options as RequestInit)
@@ -162,19 +188,22 @@ describe.sequential('password protected redirect', () => {
     expect(createResponse.status).toBe(201)
     createdSlugs.push(payload.slug)
 
-    const passwordPageResponse = await fetch(`/${payload.slug}`, { redirect: 'manual' })
+    const passwordPageResponse = await fetch(`/${payload.slug}`, {
+      redirect: 'manual',
+      headers: { 'User-Agent': socialUserAgent },
+    })
     expect(passwordPageResponse.status).toBe(200)
     expect(await passwordPageResponse.text()).toContain('Password Required')
 
     const wrongPasswordResponse = await fetch(`/${payload.slug}`, {
       redirect: 'manual',
-      headers: { 'x-link-password': 'wrong-password' },
+      headers: { 'User-Agent': socialUserAgent, 'x-link-password': 'wrong-password' },
     })
     expect(wrongPasswordResponse.status).toBe(403)
 
     const correctPasswordResponse = await fetch(`/${payload.slug}`, {
       redirect: 'manual',
-      headers: { 'x-link-password': password },
+      headers: { 'User-Agent': socialUserAgent, 'x-link-password': password },
     })
     expect(correctPasswordResponse.status).toBeGreaterThanOrEqual(300)
     expect(correctPasswordResponse.status).toBeLessThan(400)
